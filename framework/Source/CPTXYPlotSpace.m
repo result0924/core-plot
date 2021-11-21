@@ -1489,6 +1489,15 @@ CGFloat CPTFirstPositiveRoot(CGFloat a, CGFloat b, CGFloat c)
     self.allowsMomentumY = oldMomentum;
 }
 
+-(void)scaleEnd
+{
+    id<CPTPlotSpaceDelegate> theDelegate = self.delegate;
+
+    if ( [theDelegate respondsToSelector:@selector(detectUIPinchGestureEnd:)] ) {
+        [theDelegate detectUIPinchGestureEnd:self];
+    }
+}
+
 /// @endcond
 
 #pragma mark -

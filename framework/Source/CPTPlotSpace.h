@@ -145,6 +145,12 @@ extern CPTPlotSpaceInfoKey __nonnull const CPTPlotSpaceDisplacementKey;
  **/
 -(BOOL)plotSpace:(nonnull CPTPlotSpace *)space shouldHandlePointingDeviceUpEvent:(nonnull CPTNativeEvent *)event atPoint:(CGPoint)point;
 
+/// @name UIPinchGestureRecognizer
+/// @{
+/// @brief @optional Notifies that UIPinchGesture end.
+-(void)detectUIPinchGestureEnd:(nonnull CPTPlotSpace *)space;
+/// @}
+
 #if TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
 #else
 
@@ -249,6 +255,7 @@ typedef NSMutableArray<__kindof CPTPlotSpace *> CPTMutablePlotSpaceArray;
 -(void)scaleToFitEntirePlots:(nullable CPTPlotArray *)plots;
 -(void)scaleToFitEntirePlots:(nullable CPTPlotArray *)plots forCoordinate:(CPTCoordinate)coordinate;
 -(void)scaleBy:(CGFloat)interactionScale aboutPoint:(CGPoint)interactionPoint;
+-(void)scaleEnd;
 /// @}
 
 @end

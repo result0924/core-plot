@@ -303,6 +303,14 @@
     for ( CPTPlotSpace *space in theHostedGraph.allPlotSpaces ) {
         if ( space.allowsUserInteraction ) {
             [space scaleBy:scale aboutPoint:pointInPlotArea];
+            
+            switch ([aPinchGestureRecognizer state]) {
+                case UIGestureRecognizerStateEnded:
+                    [space scaleEnd];
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

@@ -452,6 +452,13 @@ typedef NSMutableOrderedSet<NSString *> CPTMutableCategorySet;
     return handledByDelegate;
 }
 
+/// @brief detect UIPinchGesture end that tracking of
+
+-(void)detectUIPinchGestureEnd
+{
+
+}
+
 #if TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
 #else
 
@@ -715,6 +722,12 @@ typedef NSMutableOrderedSet<NSString *> CPTMutableCategorySet;
  **/
 -(void)scaleBy:(CGFloat __unused)interactionScale aboutPoint:(CGPoint __unused)interactionPoint
 {
+}
+
+/// @brief Detect zoom end.
+-(void)scaleEnd
+{
+    
 }
 
 #pragma mark -

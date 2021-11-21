@@ -219,6 +219,10 @@
     return newRange;
 }
 
+-(void)detectUIPinchGestureEnd:(nonnull CPTPlotSpace *)space {
+    NSLog(@"pinch end");
+}
+
 #pragma mark -
 #pragma mark CPTScatterPlot delegate method
 
